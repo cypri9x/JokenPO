@@ -1,0 +1,54 @@
+import random
+from time import sleep
+
+
+def jogardenovo():
+    while True:
+        n1 = input("Você gostaria de jogar denovo? S/N: ")
+        if n1 == "S" or n1 == "s":
+            print("Reiniciando jogo")
+            sleep(1)
+            jokenpo()
+        elif n1 == "N" or n1 == "n":
+            print("Ok saindo...")
+            sleep(1)
+            print("\033[1;32;40mFeito por Gustavo Cypriano\033[0m")
+            exit()
+        else:
+            print("Reponda com S para sim e N para não.")
+
+
+def jokenpo():
+    while True:
+        print("\033[1;34;40m JOGO DO PEDRA, PAPEL, TESOURA\033[0m")
+        obj = input(" Escolha entre pedra,papel,tesoura: ")
+        obj.lower()
+        lista = ['pedra', 'papel', 'tesoura']
+        r = random.choice(lista)
+
+        if (obj == 'pedra') and (r == 'papel'):
+            print(f"Você perdeu hahahaha eu tirei {r}")
+            jogardenovo()
+        elif (obj == 'papel') and (r == 'tesoura'):
+            print(f"Você perdeu hahahaha eu tirei {r}")
+            jogardenovo()
+        elif (obj == 'tesoura') and (r == 'pedra'):
+            print(f"Você perdeu hahahaha eu tirei {r}")
+            jogardenovo()
+        elif (obj == "tesoura") and (r == "tesoura"):
+            print(f"Empatamos eu também tirei {r}")
+            jogardenovo()
+        elif (obj == "pedra") and (r == "pedra"):
+            print(f"Empatamos eu também tirei {r}")
+            jogardenovo()
+        elif (obj == "papel") and (r == "papel"):
+            print(f"Empatamos eu também tirei {r}")
+            jogardenovo()
+        elif (obj != "pedra") or (obj != "papel") or (obj != "tesoura"):
+            print("Caracteres ERRADOS.")
+            jokenpo()
+        else:
+            print(f"Você ganhou de mim parabéns eu tirei {r} ")
+            jogardenovo()
+
+jokenpo()
