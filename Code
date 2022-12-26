@@ -44,7 +44,7 @@ def jokenpo():
         elif (obj == "papel") and (r == "papel"):
             print(f"Empatamos eu também tirei {r}")
             jogardenovo()
-        elif (obj != "pedra") or (obj != "papel") or (obj != "tesoura"):
+        elif (obj != "pedra") and (obj != "papel") and (obj != "tesoura"):
             print("Caracteres ERRADOS.")
             jokenpo()
         else:
